@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
+    <title>Brødrenes Original</title>
+</head>
+
+<body>
+    <header>
+        <!-- Menubar -->
+        <nav class="navigation_container">
+            <!-- Mobilmenu -->
+            <label for="mobileicon" class="mobileiconlabel">&#9776;</label>
+            <input type="checkbox" id="mobileicon" class="mobileicon">
+        
+            <div class="menuitems_container">
+                <a href="udvalg.html" class="menuitem">Vores Udvalg</a>
+                <a href="bestil.html" class="menuitem">Bestil Online</a>
+                <a href="omos.html" class="menuitem">Hvem er vi?</a>
+                <a href="findos.html" class="menuitem">Find os</a>
+                <a href="foodtruck.html" class="menuitem">Foodtruck</a>      
+            </div>
+            <!-- Logoet -->
+            <a href="index.html" class="companylogo"><img src="img/logo.jpeg" alt="logo-brødrenes" class="logo"></a>
+        </nav>
+    </header>
+
+    <main>
+
+        <div class="forside"> 
+            <video class="forside-video" autoplay muted loop playsinline preload="auto">
+                <source class="forside-video" src="img/forsidefilm.mov" type="video/mp4">
+            </video>
+            <button class="video-knap">BRØDRENES ORIGINAL</button>
+        </div>
+    
+    <section class="forsideindhold">
+        <div class="forside">
+                <img class="vogn-image" src="img/vogn1.png" alt="vogn-brødrenes-foodtruck">
+            <div class="forside_top">
+                <h3 class="forside-overskrift">Mangler du maden til dit næste event?</h3>
+                <p class="forside-vogn-info">Vidste du at du hos Brødrenes kan leje vores foodtruck til dit event? 
+                    Hos Brødrenes tilbyder vi udlejning af vores helt egen foodtruck til både private arrangementer eller hvis du vil leje os til en større begivenhed. 
+                    Du kan finde meget mere information om vores foodtruck, priser og bemanding under “Foodtruck”.  
+                </p>
+                <a href="foodtruck.html"><button class="knap-tm">Læs mere her</button></a>
+            </div>
+        </div>
+        
+    
+        <h3 class="forside-overskrift-burger">Se vores udvalg af burgere her</h3>
+        <div class="forside_midt">
+            <div class="item">
+                <a href="udvalg.html">
+                <img src="img/burgersvin.png" alt="svin-burger-brødrenes" class="burger"/>
+                </a>
+                <span class="caption">Svinet</span>
+            </div>
+            <div class="item">
+                <a href="udvalg.html">
+                <img src="img/burgerdellen.png" alt="dellen-burger-brødrenes" class="burger"/>
+                </a>
+                <span class="caption">Dellen</span>
+            </div>
+            <div class="item">
+                <a href="udvalg.html">
+                <img src="img/burgerbøf.png" alt="bøf-burger-brødrenes" class="burger"/>
+                </a>
+                <span class="caption">Bøffen</span>
+            </div>
+            <div class="item">
+                <a href="udvalg.html">
+                <img src="img/burgerveggie.png" alt="veggie-burger-brødrenes" class="burger"/>
+                </a>
+                <span class="caption">Veggie</span>
+            </div>
+        </div>
+
+        <div class="forside_bund">
+            <div class="forside_top_image">
+                 <img class="tm-image" src="img/theisogmagnus.png" alt="TheisogMagnus-brødrenes-ejer">
+                <div class="forside_bund">
+                    <h3 class="forside-overskrift-tm">Hvem er vi?</h3>
+                    <p class="forside-tm-info">Vi er Theis og Magnus, brødre med en vision om at give en kvalitetsbevidst og moderne nyfortolkning af klassisk dansk grillmad. 
+                        Her hos brødrene har vi stor respekt for råvarerne og går meget op i dyrevelfærden.
+                        Vi glæder os til at dele vores madoplevelse med dig. 
+                    </p>
+                    <a href="omos.html"><button class="knap-tm">Lær os bedre at kende her</button></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+<!--Footer-->
+<!--Footer kontakt information-->
+
+<footer>
+    <form class="flex-container">
+        <div class="flex-item-left">
+            <p class="footer_overskrift">Kontakt Os</p>
+            <p>Adresse: Hveensgade 1, 8000 Aarhus C</p>
+            <p>Mandag - Søndag kl. 11:00 - 20:00</p>
+            <p>Telefon: +45 42 30 27 99</p>
+            <p>E-mail: broedrenes.kontakt@gmail.com</p>   
+        </div>
+<!--Footer nyhedsbrev signup -->
+        <div class="flex-item-middle">
+            <p class="footer_overskrift">Tilmeld dig vores nyhedsbreve</p>
+            <input type="text" placeholder="Navn..." name="Navn" required> 
+            <input type="text" placeholder="Email..." name="email" required> 
+            <input onclick="myFunction()" type="submit" value="Tilmeld">
+        </div>
+<!--Footer sociale medier -->
+        <div class="flex-item-right">
+            <p class="footer_overskrift">Følg os</p>
+                <a href="https://www.facebook.com/Broedrenes" target="_blank"><img src="img/facebookhvid.png" alt="facebook" class="sociale" id="facebook"></a>
+                <a href="https://www.instagram.com/broedrenes/" target="_blank"><img src="img/instagramhvid.png" alt="instagram" class="sociale" id="instagram"></a>
+                <a href="https://www.youtube.com/channel/UCsATW5eN4Sl9eVJ-bEeTNWA" target="_blank"><img src="img/youtubehvid.png" alt="youtube" class="sociale" id="youtube"></a>
+        </div>
+    </form>
+
+</footer>
+</body>
+</html>
+
