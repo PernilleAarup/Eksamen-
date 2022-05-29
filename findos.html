@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/findos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
+    <title>Find os</title>
+</head>
+
+<body>
+
+    <header>
+        <!-- Menubar -->
+        <nav class="navigation_container">
+            <!-- Mobilmenu -->
+            <label for="mobileicon" class="mobileiconlabel">&#9776;</label>
+            <input type="checkbox" id="mobileicon" class="mobileicon">
+        
+            <div class="menuitems_container">
+                <a href="udvalg.html" class="menuitem">Vores Udvalg</a>
+                <a href="bestil.html" class="menuitem">Bestil Online</a>
+                <a href="omos.html" class="menuitem">Hvem er vi?</a>
+                <a href="findos.html" class="menuitem">Find os</a>
+                <a href="foodtruck.html" class="menuitem">Foodtruck</a>      
+            </div>
+
+            <!-- Logoet -->
+            <a href="index.html" class="companylogo"><img src="img/logo.jpeg" alt="logo-brødrenes" class="logo"></a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h3 class="findos-overskrift">Find os</h3>
+
+            <div class="findos-boks1">
+                    <div>
+                        Hveensgade 1, 8000 Aarhus C
+                    </div>
+                    <div>
+                    Mandag - Søndag 
+                    </div>
+                    <div>
+                        Kl 11:00-20:00
+                    </div>
+            </div>
+            <br>
+            <div class="findos-boks2">
+                    <div>
+                        Borggade 12b, 8000 Aarhus C
+                    </div>
+                    <div>
+                    Mandag - Søndag 
+                    </div>
+                    <div>
+                        Kl 11:00-20:00
+                    </div>
+            </div>
+        </section>
+
+        <div>
+            <img class="burger-skiller-omos" src="img/skiller.png" alt="burgerskiller-illustration-brødrenes">
+        </div>
+
+        <div class="kort">
+            <iframe class="findos-kort" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2221.6816569927378!2d10.217153116046369!3d56.162608580665015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x464c3f0086c163db%3A0x9c3ea666817d0d7f!2sBr%C3%B8drenes%20Original!5e0!3m2!1sda!2sdk!4v1652781482985!5m2!1sda!2sdk"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <div class="dame1">
+            <img class="dame-image1" src="img/dame1.png" alt="dame-illustration-brødrenes">
+        </div>
+        <div class="dame6">
+            <img class="dame-image6" src="img/dame6.png" alt="dame-illustration-brødrenes">
+        </div>
+
+        <!-- Geolocation og ruteplanlægning-->
+        <section class="geolocating">
+            <button id="find-mig">Besøg os</button><br/>
+            <p id="status"></p>
+            <a id="map-link" target="_blank"></a>
+        </section>
+        <br><br>
+
+        <script>
+        // Geolocation og ruteplanlægning
+        function geoFindMe() {
+            const status = document.querySelector('#status');
+            const mapLink = document.querySelector('#map-link');
+
+            mapLink.href = '';
+            mapLink.textContent = '';
+
+            function success(position) {
+            const latitude  = position.coords.latitude;
+            const longitude = position.coords.longitude;
+
+            status.textContent = '';
+            mapLink.href = `https://www.google.com/maps/dir/?api=1&origin=${latitude}/${longitude}&destination=56.16266234861956/10.219443722413853&travelmode=driving`;
+            mapLink.textContent = `Vis min rute`;
+            }
+
+            function error() {
+            status.textContent = 'Vi kunne ikke finde din placering';
+            }
+
+            if(!navigator.geolocation) {
+            status.textContent = 'Din browser understøtter ikke geolocation';
+            } else {
+            status.textContent = 'Finder…';
+            navigator.geolocation.getCurrentPosition(success, error);
+            }
+
+        }
+
+        document.querySelector('#find-mig').addEventListener('click', geoFindMe);
+        </script>
+
+
+    </main>
+
+
+<!--Footer-->
+<!--Footer kontakt information-->
+<footer>
+    <form class="flex-container">
+        <div class="flex-item-left">
+            <p class="footer_overskrift">Kontakt Os</p>
+            <p>Adresse: Hveensgade 1, 8000 Aarhus C</p>
+            <p>Mandag - Søndag kl. 11:00 - 20:00</p>
+            <p>Telefon: +45 42 30 27 99</p>
+            <p>E-mail: broedrenes.kontakt@gmail.com</p>   
+        </div>
+    
+<!--Footer nyhedsbrev signup -->
+        <div class="flex-item-middle">
+            <p class="footer_overskrift">Tilmeld dig vores nyhedsbreve</p>
+            <input type="text" placeholder="Navn..." name="Navn" required> 
+            <input type="text" placeholder="Email..." name="email" required> 
+            <input onclick="myFunction()" type="submit" value="Tilmeld">
+        </div>
+        
+<!--Footer sociale medier -->
+        <div class="flex-item-right">
+            <p class="footer_overskrift">Følg os</p>
+                <a href="https://www.facebook.com/Broedrenes" target="_blank"><img src="img/facebookhvid.png" alt="facebook" class="sociale" id="facebook"></a>
+                <a href="https://www.instagram.com/broedrenes/" target="_blank"><img src="img/instagramhvid.png" alt="instagram" class="sociale" id="instagram"></a>
+                <a href="https://www.youtube.com/channel/UCsATW5eN4Sl9eVJ-bEeTNWA" target="_blank"><img src="img/youtubehvid.png" alt="youtube" class="sociale" id="youtube"></a>
+        </div>
+    </form>
+</footer>
+</body>
+</html>
